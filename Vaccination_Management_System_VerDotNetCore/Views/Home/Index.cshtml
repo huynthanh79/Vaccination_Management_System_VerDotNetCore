@@ -1,0 +1,190 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<div class="container-sm">
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="~/img/logo_navbar.png" alt="" width="50" height="50">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="margin: auto;">
+                    <li class="nav-item pd-10px">
+                        <a class="nav-link fs-30px active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item pd-10px">
+                        <a class="nav-link fs-30px" href="#service">Service</a>
+                    </li>
+                    <li class="nav-item pd-10px">
+                        <a class="nav-link fs-30px" href="#process">Pricing</a>
+                    </li>
+
+                </ul>
+
+                <a type="button" class="btn btn-primary btn-signin" asp-area="" asp-controller="Thongtintiemchungs" asp-action="Index">
+                    Sign in
+                </a>
+
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                     aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Đăng Nhập</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="form-injection">
+                                    <div class="mb-3">
+                                        <label for="userName" class="form-label">Tên đăng nhập:</label>
+                                        <input type="text" class="form-control" id="userName">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="password" class="form-label">Mật khẩu:</label>
+                                        <input type="password" class="form-control" id="password">
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                                    <button type="button" class="btn btn-primary">Đăng nhập</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- end navbar  -->
+    <!-- content about -->
+    <div class="content" style="margin: 100px 0">
+        <div class="container about" style="margin-bottom: 100px">
+            <div class="row">
+                <div class="col-md-6" style="margin-bottom:30px">
+                    <h1 style="font-size: 70px;">Vaccine to celebrate a healthier</h1>
+                    <p style="font-size: 22px; padding: 10px 0;">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                        Facilis deserunt rerum eius voluptas.
+                    </p>
+                    <a href="/view-employee/view-registration-list" type="button" class="btn btn-primary btn-signin">Regist now</a>
+                </div>
+                <div class="col-md-6" style="padding-top: 30px;">
+                    <img src="~/img/Group 23.png" style="width:90%" alt="">
+                </div>
+
+            </div>
+        </div>
+        <div class="service" style="margin-bottom: 100px" id="service">
+            <div class="service-header" style="text-align:center">
+                <h3 style="font-size: 40px; color: #52D0F0;">Service</h3>
+                <h1 style="font-size: 70px; color: #000; padding: 0; line-height: 1;">Our services</h1>
+                <p style="font-size: 22px; color: #000;">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Reprehenderit beatae porro, <br> nesciunt quis maiores incidunt.
+                </p>
+            </div>
+            <div class="container service-content" style="margin-top: 90px;">
+                <div class="row" style="justify-content:space-evenly;">
+                    <div class="col-md-3"
+                         style="background-color:#F5F5F5; padding: 30px 30px; border-radius: 10px; margin-bottom: 20px;">
+                        <img src="~/img/logo_service1.png" alt="">
+                        <h3 style="padding:20px 0; font-weight: bold;">Examination</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur .</p>
+                    </div>
+                    <div class="col-md-3"
+                         style="background-color:#F5F5F5; padding: 30px 30px; border-radius: 10px; margin-bottom: 20px;">
+                        <img src="~/img/logo_service2.png" alt="">
+                        <h3 style="padding:20px 0; font-weight: bold;">Vaccine</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur .</p>
+                    </div>
+                    <div class="col-md-3"
+                         style="background-color:#F5F5F5; padding: 30px 30px; border-radius: 10px; margin-bottom: 20px;">
+                        <img src="~/img/logo_service3.png" alt="">
+                        <h3 style="padding:20px 0; font-weight: bold;">Care Healthier</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur .</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="process" id="process">
+            <div class="service-header" style="text-align:center">
+                <h3 style="font-size: 40px; color: #52D0F0;">How to use our service?</h3>
+                <h1 style="font-size: 70px; color: #000; padding: 0; line-height: 1;">Step by step register our service</h1>
+            </div>
+            <div class="container service-content" style="margin-top: 90px;">
+                <div class="row" style="justify-content:space-evenly;">
+                    <div class="col-md-3"
+                         style="background-color:#F5F5F5; padding: 30px 30px; border-radius: 10px; margin-bottom: 20px;">
+                        <img src="~/img/img_process1.png" alt="" style="width:100%">
+                        <h3 style="padding:20px 0; font-weight: bold;">Regist in website or at our hospital</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur .</p>
+                        <ul>
+                            <li>Provide your infor mation</li>
+                            <li>Choose date you want to service </li>
+                            <li>Contact US If you have any problem</li>
+                        </ul>
+
+                    </div>
+                    <div class="col-md-3"
+                         style="background-color:#F5F5F5; padding: 30px 30px; border-radius: 10px; margin-bottom: 20px;">
+                        <img src="~/img/img_process2.png" alt="" style="width:100%">
+                        <h3 style="padding:20px 0; font-weight: bold;">Pay fee service</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur .</p>
+                        <ul>
+                            <li>Provide your infor mation</li>
+                            <li>Choose date you want to service </li>
+                            <li>Pay fee </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3"
+                         style="background-color:#F5F5F5; padding: 30px 30px; border-radius: 10px; margin-bottom: 20px;">
+                        <img src="~/img/img_process3.png" alt="" style="width:100%">
+                        <h3 style="padding:20px 0; font-weight: bold;">Regist in website or at our hospital</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur .</p>
+                        <ul>
+                            <li>Provide your infor mation</li>
+                            <li>Choose date you want to service </li>
+                            <li>Pay fee </li>
+                        </ul>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end content about -->
+<div class="container-fluid footer" style="background-color: #191919; padding: 30px 0;">
+    <div class="row" style="justify-content:space-evenly; color: #fff; margin:0">
+        <div class="col-md-3" style=" padding: 30px 30px; margin-bottom: 20px;">
+            <img src="~/img/logo_navbar.png" alt=""
+                 style="border: 2px solid #fff; border-radius: 5px; margin-bottom: 10px;">
+            <p>Lorem ipsum dolor sit amet consectetur .</p>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="col-md-3" style=" padding: 30px 30px; margin-bottom: 20px; ">
+            <h3 style="padding:20px 0; font-weight: bold;">Care Healthier</h3>
+            <p>call us: +151-654-6513</p>
+            <p>Email: hospital@gmail.com</p>
+        </div>
+        <div class="col-md-3" style=" padding: 30px 30px; margin-bottom: 20px;">
+            <h3 style="padding:20px 0; font-weight: bold;">Adress</h3>
+            <p>123 HCM city VietNam</p>
+            <p>Email: hospital@gmail.com</p>
+        </div>
+
+    </div>
+</div>

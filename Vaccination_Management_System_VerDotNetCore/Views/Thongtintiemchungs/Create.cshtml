@@ -1,0 +1,305 @@
+﻿@model Vaccination_Management_System_VerDotNetCore.Models.Entities.Thongtintiemchung
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*<h1>Create</h1>
+
+    <h4>Thongtintiemchung</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Makh" class="control-label"></label>
+                    <select asp-for="Makh" class="form-control" asp-items="ViewBag.Makh"></select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Mavc" class="control-label"></label>
+                    <select asp-for="Mavc" class="form-control" asp-items="ViewBag.Mavc"></select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Manv" class="control-label"></label>
+                    <select asp-for="Manv" class="form-control" asp-items="ViewBag.Manv"></select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Ngaytiem" class="control-label"></label>
+                    <input asp-for="Ngaytiem" class="form-control" />
+                    <span asp-validation-for="Ngaytiem" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Ngaytiemtieptheo" class="control-label"></label>
+                    <input asp-for="Ngaytiemtieptheo" class="form-control" />
+                    <span asp-validation-for="Ngaytiemtieptheo" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Tinhtrangbn" class="control-label"></label>
+                    <input asp-for="Tinhtrangbn" class="form-control" />
+                    <span asp-validation-for="Tinhtrangbn" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Ghichu" class="control-label"></label>
+                    <input asp-for="Ghichu" class="form-control" />
+                    <span asp-validation-for="Ghichu" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>*@
+
+
+
+
+
+
+<div class="container-sm">
+    <!-- nav-bar -->
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                <img src="/img/logo_navbar.png" alt="" width="50" height="50">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="margin: 0 auto;">
+                    <li class="nav-item pd-10px">
+                        <a class="nav-link fs-30px active" aria-current="page" href="#">Thông tin tiêm chủng</a>
+                    </li>
+                    <li class="nav-item pd-10px">
+                        <a class="nav-link fs-30px" href="/injection-point">Phiếu chỉ tiêm chủng</a>
+                    </li>
+
+                </ul>
+                <div class="infor-user">
+                    <div class="infor-user-left">
+                        <p style="line-height: 1.5; margin: 0; font-size: 20px; font-weight: bold;">Nguyễn Văn A</p>
+                        <p style="line-height: 1.5; margin: 0; font-size: 15px; color: #52D0F0;">Bác sĩ</p>
+                    </div>
+                    <div class="infor-user-right">
+                        <div class="infor-user-img">
+                            <img src="/img/raphael_customer.png" alt="">
+                        </div>
+                        <div class="sign-out-btn">
+                            <i class="bi bi-box-arrow-right"
+                               style="font-size: 22px; color: #52D0F0; display: block;"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- end nav-bar  -->
+    <!-- content  -->
+    <div class="content" style="margin: 100px 0; padding: 0">
+        <div class="container about" style="margin-bottom: 100px;">
+            <form asp-action="Create" class="injection-information">
+                <div class="row" style="justify-content: space-evenly;">
+                    <div class="col-md-5" style="margin-bottom:30px">
+                        <div class="form-injection">
+                            <h3 style="text-align: center; margin-bottom: 70px;">Thông Tin Tiêm Chủng</h3>
+
+                            <h5>Thông tin khách hàng</h5>
+                            <select class='form-group form-control form-control-sm mt-3 mb-3' id="checkbox-select-IDKH-options" name='customerID' required='required' asp-for="Makh">
+                                <option value=''>-- Chọn khách hàng --</option>
+                                @if (ViewBag.KhachHang.Count == 0)
+                                {
+                                    <option>Not found</option>
+                                }
+                                else
+                                {
+                                    @foreach (var item in ViewBag.KhachHang)
+                                    {
+                                        <option value="@item.Makh">@item.Makh</option>
+                                    }
+                                }
+
+                            </select>
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Họ Tên:</label>
+                                <input type="text" class="form-control" id="name-cus">
+                            </div>
+                            <div class="mb-3">
+                                <label for="identity-number" class="form-label">CMND</label>
+                                <input type="text" class="form-control" id="identity-number-cus">
+                            </div>
+                            <div class="mb-3">
+                                <label for="address" class="form-label">Địa chỉ:</label>
+                                <input type="text" class="form-control" id="address-cus">
+                            </div>
+                            <h5>Thông tin vắc xin</h5>
+                            <div class="form-group mb-3">
+                                <select class='form-group form-control form-control-sm mt-3 mb-3' id="checkbox-select-vacxin-options" name='vacxinID' required='required' asp-for="Mavc">
+                                    <option value=''>-- Chọn vắc xin tiêm --</option>
+                                    @if (ViewBag.VacXin.Count == 0)
+                                    {
+                                        <option>Not found</option>
+                                    }
+                                    else
+                                    {
+                                        @foreach (var item in ViewBag.VacXin)
+                                        {
+                                            <option value="@item.Mavc">@item.Mavc</option>
+                                        }
+                                    }
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="vaccineName" class="form-label">Tên vaccine:</label>
+                                <input type="text" class="form-control" id="name-vc">
+                            </div>
+
+                            @*{{!-- <h5 style="margin-top:30px;">Thông Tin Người Giám Hộ (Nếu có)</h5>
+
+                                <div class="mb-3">
+                                    <label for="guardianName" class="form-label">Họ Tên:</label>
+                                    <input type="text" class="form-control" id="vaccineName">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="guardianIdentity" class="form-label">CMND</label>
+                                    <input type="text" class="form-control" id="guardianIdentity">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="guardianAddress" class="form-label">Địa chỉ:</label>
+                                    <input type="text" class="form-control" id="guardianAddress">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="guardianNote" class="form-label">Ghi chú:</label>
+                                    <textarea  id="guardianNote" class="form-control" cols="30" rows="10"></textarea>
+                                </div> --}}*@
+                        </div>
+                    </div>
+
+                    <div class="col-md-5" style="margin-bottom:30px">
+
+                        <div class="form-injection">
+                            <h3 style="text-align: center; margin-bottom: 70px;">Thông Tin Tiêm Chủng</h3>
+
+                            <h5>Thông tin khác</h5>
+                            <div class="row" style="justify-content: space-between;">
+                                <div class="col-5">
+                                    <div class="form-group mb-3">
+                                        <label for="injectionDate" class="form-label">Ngày tiêm:</label>
+                                        <input type="date" class="form-control" id="injectionDate" name="injection_date" required asp-for="Ngaytiem">
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group mb-3">
+                                        <label for="injectionNextDate" class="form-label">Ngày tiêm tiếp theo:</label>
+                                        <input type="date" class="form-control" id="injectionNextDate" name="injection_next_date" asp-for="Ngaytiemtieptheo">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="amountOfPackage" class="form-label">Tình trạng bệnh nhân:</label>
+                                <input type="text" class="form-control" id="amountOfPackage" name="patient_condition" asp-for="Tinhtrangbn">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="vaccineNote" class="form-label">Ghi chú:</label>
+                                <textarea id="guardianNote" class="form-control" cols="30" rows="5" name="patient_note" asp-for="Ghichu"></textarea>
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-outline-success btn-signin" style="margin-top: 30px" type="submit">Lập phiếu</button>
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+            <!-- content  -->
+        </div>
+    </div>
+</div>
+<!-- footer -->
+
+<div class="container-fluid page-footer" style="background-color: #191919; padding: 30px 0;">
+    <div class="row" style="justify-content:space-evenly; color: #fff; margin:0">
+        <div class="col-md-3" style=" padding: 30px 30px; margin-bottom: 20px;">
+            <img src="/img/logo_navbar.png" alt=""
+                 style="border: 2px solid #fff; border-radius: 5px; margin-bottom: 10px;">
+            <p>Lorem ipsum dolor sit amet consectetur .</p>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="col-md-3" style=" padding: 30px 30px; margin-bottom: 20px; ">
+            <h3 style="padding:20px 0; font-weight: bold;">Care Healthier</h3>
+            <p>call us: +151-654-6513</p>
+            <p>Email: hospital@gmail.com</p>
+        </div>
+        <div class="col-md-3" style=" padding: 30px 30px; margin-bottom: 20px;">
+            <h3 style="padding:20px 0; font-weight: bold;">Adress</h3>
+            <p>123 HCM city VietNam</p>
+            <p>Email: hospital@gmail.com</p>
+        </div>
+
+    </div>
+</div>
+<!-- footer -->
+
+
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var CustomerIDs = document.getElementById('checkbox-select-IDKH-options');
+        var VaccineIDs = document.getElementById('checkbox-select-vacxin-options');
+
+        CustomerIDs?.addEventListener('change', function () {
+            var nameCus = document.getElementById('name-cus');
+            var identityCus = document.getElementById('identity-number-cus');
+            var addressCus = document.getElementById('address-cus');
+
+            var customers = @Json.Serialize((ViewBag.KhachHang));
+            for (var i = 0; i < customers.length; i++) {
+                if (customers[i].makh == CustomerIDs.value) {
+                    nameCus.value = customers[i].hotenkh;
+                    identityCus.value = customers[i].cmnd;
+                    addressCus.value = customers[i].diachi;
+                }
+            }
+
+            if (CustomerIDs.value == '') {
+                nameCus.value = '';
+                identityCus.value = '';
+                addressCus.value = '';
+            }
+        });
+
+
+        var vacxins = @Json.Serialize((ViewBag.VacXin));
+        VaccineIDs?.addEventListener('change', function() {
+            var nameVC = document.getElementById('name-vc');
+            for (var i = 0; i < vacxins.length; i++) {
+                if (VaccineIDs.value == vacxins[i].mavc) {
+                    nameVC.value = vacxins[i].tenvc;
+                }
+            }
+            if(VaccineIDs.value == '') {
+                nameVC.value = '';
+            }
+        });
+    });
+</script>
+}

@@ -1,0 +1,65 @@
+﻿@model Vaccination_Management_System_VerDotNetCore.Models.Entities.Thongtintiemchung
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>Thongtintiemchung</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Mathongtin" />
+            <div class="form-group">
+                <label asp-for="Makh" class="control-label"></label>
+                <select asp-for="Makh" class="form-control" asp-items="ViewBag.Makh"></select>
+                <span asp-validation-for="Makh" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Mavc" class="control-label"></label>
+                <select asp-for="Mavc" class="form-control" asp-items="ViewBag.Mavc"></select>
+                <span asp-validation-for="Mavc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Manv" class="control-label"></label>
+                <select asp-for="Manv" class="form-control" asp-items="ViewBag.Manv"></select>
+                <span asp-validation-for="Manv" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ngaytiem" class="control-label"></label>
+                <input asp-for="Ngaytiem" class="form-control" />
+                <span asp-validation-for="Ngaytiem" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ngaytiemtieptheo" class="control-label"></label>
+                <input asp-for="Ngaytiemtieptheo" class="form-control" />
+                <span asp-validation-for="Ngaytiemtieptheo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tinhtrangbn" class="control-label"></label>
+                <input asp-for="Tinhtrangbn" class="form-control" />
+                <span asp-validation-for="Tinhtrangbn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ghichu" class="control-label"></label>
+                <input asp-for="Ghichu" class="form-control" />
+                <span asp-validation-for="Ghichu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
